@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  test:
+    macos:
+      xcode: 14.2.0
+      resource_class: large
+    steps:
+      - checkout
+      - run:
+          name: tests
+          command: xcodebuild -version
+workflows:
+  example:
+    jobs:
+      - test
